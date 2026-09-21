@@ -1,0 +1,101 @@
+{
+  "accuracy": 0.7949,
+  "precision": 0.8242,
+  "recall": 0.9036,
+  "specificity": 0.5294,
+  "f1_score": 0.8621,
+  "roc_auc": 0.8232,
+  "pr_auc": 0.9274,
+  "decision_threshold": 0.41,
+  "confusion_matrix": {
+    "true_positive": 75,
+    "false_positive": 16,
+    "true_negative": 18,
+    "false_negative": 8,
+    "total_evaluated": 117
+  },
+  "feature_importance": [
+    {
+      "feature": "alkaline_phosphotase",
+      "importance": 0.1598
+    },
+    {
+      "feature": "aspartate_aminotransferase",
+      "importance": 0.1497
+    },
+    {
+      "feature": "total_bilirubin",
+      "importance": 0.1351
+    },
+    {
+      "feature": "direct_bilirubin",
+      "importance": 0.124
+    },
+    {
+      "feature": "alamine_aminotransferase",
+      "importance": 0.1202
+    },
+    {
+      "feature": "age",
+      "importance": 0.1115
+    },
+    {
+      "feature": "albumin",
+      "importance": 0.0713
+    },
+    {
+      "feature": "total_protiens",
+      "importance": 0.0628
+    },
+    {
+      "feature": "albumin_and_globulin_ratio",
+      "importance": 0.059
+    },
+    {
+      "feature": "gender_Male",
+      "importance": 0.0066
+    }
+  ],
+  "shap_summary": [
+    {
+      "feature": "total_bilirubin",
+      "mean_abs_shap": 0.0615
+    },
+    {
+      "feature": "alkaline_phosphotase",
+      "mean_abs_shap": 0.061
+    },
+    {
+      "feature": "aspartate_aminotransferase",
+      "mean_abs_shap": 0.0546
+    },
+    {
+      "feature": "direct_bilirubin",
+      "mean_abs_shap": 0.0479
+    },
+    {
+      "feature": "alamine_aminotransferase",
+      "mean_abs_shap": 0.0428
+    },
+    {
+      "feature": "age",
+      "mean_abs_shap": 0.0412
+    },
+    {
+      "feature": "albumin",
+      "mean_abs_shap": 0.0199
+    },
+    {
+      "feature": "total_protiens",
+      "mean_abs_shap": 0.0122
+    },
+    {
+      "feature": "albumin_and_globulin_ratio",
+      "mean_abs_shap": 0.0108
+    },
+    {
+      "feature": "gender_Male",
+      "mean_abs_shap": 0.0029
+    }
+  ]
+}

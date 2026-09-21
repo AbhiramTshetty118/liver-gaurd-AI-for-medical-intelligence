@@ -1,0 +1,6 @@
+{
+  "name": "LiverGuard",
+  "description": "An intelligent machine learning system for liver disease risk prediction, feature explanation, and clinical lab parameter analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

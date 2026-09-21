@@ -1,0 +1,76 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: liverguard_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-liverguard_db}
+      POSTGRES_USER: ${POSTGRES_USER:-liverguard_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-liverguard_secure_password_2026}
+    volumes:
+      - liverguard_pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - liverguard_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U liverguard_user -d liverguard_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: liverguard_backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://liverguard_user:${POSTGRES_PASSWORD:-liverguard_secure_password_2026}@db:5432/${POSTGRES_DB:-liverguard_db}
+      JWT_SECRET: ${JWT_SECRET:-super_secret_jwt_key_liverguard_production_2026}
+      ACCESS_TOKEN_EXPIRE_MINUTES: 1440
+      ENVIRONMENT: production
+    ports:
+      - "8000:8000"
+    networks:
+      - liverguard_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: liverguard_frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "3000:80"
+    networks:
+      - liverguard_network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  liverguard_pgdata:
+    driver: local
+
+networks:
+  liverguard_network:
+    driver: bridge

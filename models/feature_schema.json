@@ -1,0 +1,124 @@
+{
+  "features": [
+    {
+      "name": "age",
+      "label": "Age",
+      "type": "integer",
+      "unit": "years",
+      "min": 4,
+      "max": 95,
+      "default": 45,
+      "description": "Patient's age in years",
+      "category": "patient_info"
+    },
+    {
+      "name": "gender",
+      "label": "Gender",
+      "type": "categorical",
+      "unit": "",
+      "options": [
+        "Male",
+        "Female"
+      ],
+      "default": "Male",
+      "description": "Biological sex of the patient",
+      "category": "patient_info"
+    },
+    {
+      "name": "total_bilirubin",
+      "label": "Total Bilirubin",
+      "type": "float",
+      "unit": "mg/dL",
+      "min": 0.4,
+      "max": 75.0,
+      "default": 1.2,
+      "normal_range": "0.1 - 1.2 mg/dL",
+      "description": "Total bilirubin includes both direct and indirect bilirubin; elevated levels indicate liver excretion or hemolysis issues.",
+      "category": "liver_function"
+    },
+    {
+      "name": "direct_bilirubin",
+      "label": "Direct Bilirubin",
+      "type": "float",
+      "unit": "mg/dL",
+      "min": 0.1,
+      "max": 20.0,
+      "default": 0.4,
+      "normal_range": "0.0 - 0.3 mg/dL",
+      "description": "Conjugated bilirubin processed by hepatocytes; sensitive marker for biliary obstruction.",
+      "category": "liver_function"
+    },
+    {
+      "name": "alkaline_phosphotase",
+      "label": "Alkaline Phosphatase (ALP)",
+      "type": "integer",
+      "unit": "IU/L",
+      "min": 60,
+      "max": 2200,
+      "default": 200,
+      "normal_range": "44 - 147 IU/L",
+      "description": "Enzyme concentrated in liver bile duct cells; higher values indicate cholestatic pathology.",
+      "category": "liver_function"
+    },
+    {
+      "name": "alamine_aminotransferase",
+      "label": "Alanine Aminotransferase (ALT / SGPT)",
+      "type": "integer",
+      "unit": "IU/L",
+      "min": 10,
+      "max": 2000,
+      "default": 35,
+      "normal_range": "7 - 56 IU/L",
+      "description": "Intracellular liver enzyme released during hepatocellular injury and inflammation.",
+      "category": "liver_function"
+    },
+    {
+      "name": "aspartate_aminotransferase",
+      "label": "Aspartate Aminotransferase (AST / SGOT)",
+      "type": "integer",
+      "unit": "IU/L",
+      "min": 10,
+      "max": 4950,
+      "default": 40,
+      "normal_range": "10 - 40 IU/L",
+      "description": "Mitochondrial and cytosolic enzyme found in liver and heart; high AST/ALT ratio indicates advanced injury.",
+      "category": "liver_function"
+    },
+    {
+      "name": "total_protiens",
+      "label": "Total Proteins",
+      "type": "float",
+      "unit": "g/dL",
+      "min": 2.5,
+      "max": 9.6,
+      "default": 6.8,
+      "normal_range": "6.0 - 8.3 g/dL",
+      "description": "Measures total serum albumin and globulin proteins synthesized primarily by the liver.",
+      "category": "liver_function"
+    },
+    {
+      "name": "albumin",
+      "label": "Albumin",
+      "type": "float",
+      "unit": "g/dL",
+      "min": 0.9,
+      "max": 5.5,
+      "default": 3.2,
+      "normal_range": "3.5 - 5.0 g/dL",
+      "description": "Major protein produced exclusively by the liver; maintains oncotic pressure and transports substances.",
+      "category": "liver_function"
+    },
+    {
+      "name": "albumin_and_globulin_ratio",
+      "label": "A/G Ratio",
+      "type": "float",
+      "unit": "ratio",
+      "min": 0.3,
+      "max": 2.8,
+      "default": 0.95,
+      "normal_range": "1.0 - 2.5",
+      "description": "Ratio of albumin to globulins. Values below 1.0 indicate chronic liver dysfunction or cirrhosis.",
+      "category": "liver_function"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+[
+  "tests/test_backend.py::test_auth_and_history_flow",
+  "tests/test_backend.py::test_health_check",
+  "tests/test_backend.py::test_metrics_endpoint",
+  "tests/test_backend.py::test_model_info",
+  "tests/test_backend.py::test_valid_prediction",
+  "tests/test_backend.py::test_validation_direct_bilirubin_exceeding_total",
+  "tests/test_backend.py::test_validation_impossible_age",
+  "tests/test_backend.py::test_validation_negative_value",
+  "tests/test_backend.py::test_validation_unknown_gender",
+  "tests/test_ml.py::test_missing_value_imputation",
+  "tests/test_ml.py::test_model_pipeline_loading",
+  "tests/test_ml.py::test_preprocessing_feature_order",
+  "tests/test_ml.py::test_probability_range",
+  "tests/test_ml.py::test_reproducibility",
+  "tests/test_ml.py::test_shap_explanation_integrity"
+]

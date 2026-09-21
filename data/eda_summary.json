@@ -1,0 +1,273 @@
+{
+  "dataset_name": "Indian Liver Patient Dataset (ILPD)",
+  "source": "UCI Machine Learning Repository",
+  "total_records": 583,
+  "features_count": 10,
+  "target_column": "target (1: Elevated Liver Disease Risk, 0: Healthy/Low Risk)",
+  "duplicates": {
+    "count": 13,
+    "decision": "Kept in dataset without silent deletion. Cross-validation folds and scikit-learn pipeline handle data integrity without synthetic removal."
+  },
+  "missing_values": {
+    "counts": {
+      "age": 0,
+      "gender": 0,
+      "total_bilirubin": 0,
+      "direct_bilirubin": 0,
+      "alkaline_phosphotase": 0,
+      "alamine_aminotransferase": 0,
+      "aspartate_aminotransferase": 0,
+      "total_protiens": 0,
+      "albumin": 0,
+      "albumin_and_globulin_ratio": 4,
+      "target_raw": 0,
+      "target": 0
+    },
+    "decision": "Albumin_and_Globulin_Ratio has 4 missing entries (0.68%). Handled inside Scikit-learn Pipeline via Median Imputation (SimpleImputer(strategy='median')) to prevent data leakage."
+  },
+  "class_imbalance": {
+    "positive_liver_disease (1)": 416,
+    "negative_healthy (0)": 167,
+    "positive_pct": 71.36,
+    "negative_pct": 28.64,
+    "decision": "Addressed via balanced class weighting in estimators (class_weight='balanced') and decision threshold tuning favoring screening recall (minimizing false negatives)."
+  },
+  "feature_statistics": {
+    "age": {
+      "mean": 44.746,
+      "std": 16.19,
+      "median": 45.0,
+      "min": 4.0,
+      "q25": 33.0,
+      "q75": 58.0,
+      "max": 90.0,
+      "skewness": -0.029,
+      "outliers_iqr": 0,
+      "missing": 0
+    },
+    "total_bilirubin": {
+      "mean": 3.299,
+      "std": 6.21,
+      "median": 1.0,
+      "min": 0.4,
+      "q25": 0.8,
+      "q75": 2.6,
+      "max": 75.0,
+      "skewness": 4.907,
+      "outliers_iqr": 84,
+      "missing": 0
+    },
+    "direct_bilirubin": {
+      "mean": 1.486,
+      "std": 2.808,
+      "median": 0.3,
+      "min": 0.1,
+      "q25": 0.2,
+      "q75": 1.3,
+      "max": 19.7,
+      "skewness": 3.212,
+      "outliers_iqr": 81,
+      "missing": 0
+    },
+    "alkaline_phosphotase": {
+      "mean": 290.576,
+      "std": 242.938,
+      "median": 208.0,
+      "min": 63.0,
+      "q25": 175.5,
+      "q75": 298.0,
+      "max": 2110.0,
+      "skewness": 3.765,
+      "outliers_iqr": 69,
+      "missing": 0
+    },
+    "alamine_aminotransferase": {
+      "mean": 80.714,
+      "std": 182.62,
+      "median": 35.0,
+      "min": 10.0,
+      "q25": 23.0,
+      "q75": 60.5,
+      "max": 2000.0,
+      "skewness": 6.549,
+      "outliers_iqr": 73,
+      "missing": 0
+    },
+    "aspartate_aminotransferase": {
+      "mean": 109.911,
+      "std": 288.919,
+      "median": 42.0,
+      "min": 10.0,
+      "q25": 25.0,
+      "q75": 87.0,
+      "max": 4929.0,
+      "skewness": 10.546,
+      "outliers_iqr": 66,
+      "missing": 0
+    },
+    "total_protiens": {
+      "mean": 6.483,
+      "std": 1.085,
+      "median": 6.6,
+      "min": 2.7,
+      "q25": 5.8,
+      "q75": 7.2,
+      "max": 9.6,
+      "skewness": -0.286,
+      "outliers_iqr": 8,
+      "missing": 0
+    },
+    "albumin": {
+      "mean": 3.142,
+      "std": 0.796,
+      "median": 3.1,
+      "min": 0.9,
+      "q25": 2.6,
+      "q75": 3.8,
+      "max": 5.5,
+      "skewness": -0.044,
+      "outliers_iqr": 0,
+      "missing": 0
+    },
+    "albumin_and_globulin_ratio": {
+      "mean": 0.947,
+      "std": 0.32,
+      "median": 0.93,
+      "min": 0.3,
+      "q25": 0.7,
+      "q75": 1.1,
+      "max": 2.8,
+      "skewness": 0.992,
+      "outliers_iqr": 10,
+      "missing": 4
+    }
+  },
+  "correlations": {
+    "age": {
+      "age": 1.0,
+      "total_bilirubin": 0.0118,
+      "direct_bilirubin": 0.0075,
+      "alkaline_phosphotase": 0.0804,
+      "alamine_aminotransferase": -0.0869,
+      "aspartate_aminotransferase": -0.0199,
+      "total_protiens": -0.1875,
+      "albumin": -0.2659,
+      "albumin_and_globulin_ratio": -0.2164,
+      "target": 0.1374
+    },
+    "total_bilirubin": {
+      "age": 0.0118,
+      "total_bilirubin": 1.0,
+      "direct_bilirubin": 0.8746,
+      "alkaline_phosphotase": 0.2067,
+      "alamine_aminotransferase": 0.2141,
+      "aspartate_aminotransferase": 0.2378,
+      "total_protiens": -0.0081,
+      "albumin": -0.2223,
+      "albumin_and_globulin_ratio": -0.2063,
+      "target": 0.2202
+    },
+    "direct_bilirubin": {
+      "age": 0.0075,
+      "total_bilirubin": 0.8746,
+      "direct_bilirubin": 1.0,
+      "alkaline_phosphotase": 0.2349,
+      "alamine_aminotransferase": 0.2339,
+      "aspartate_aminotransferase": 0.2575,
+      "total_protiens": -0.0001,
+      "albumin": -0.2285,
+      "albumin_and_globulin_ratio": -0.2001,
+      "target": 0.246
+    },
+    "alkaline_phosphotase": {
+      "age": 0.0804,
+      "total_bilirubin": 0.2067,
+      "direct_bilirubin": 0.2349,
+      "alkaline_phosphotase": 1.0,
+      "alamine_aminotransferase": 0.1257,
+      "aspartate_aminotransferase": 0.1672,
+      "total_protiens": -0.0285,
+      "albumin": -0.1655,
+      "albumin_and_globulin_ratio": -0.2342,
+      "target": 0.1849
+    },
+    "alamine_aminotransferase": {
+      "age": -0.0869,
+      "total_bilirubin": 0.2141,
+      "direct_bilirubin": 0.2339,
+      "alkaline_phosphotase": 0.1257,
+      "alamine_aminotransferase": 1.0,
+      "aspartate_aminotransferase": 0.792,
+      "total_protiens": -0.0425,
+      "albumin": -0.0297,
+      "albumin_and_globulin_ratio": -0.0024,
+      "target": 0.1634
+    },
+    "aspartate_aminotransferase": {
+      "age": -0.0199,
+      "total_bilirubin": 0.2378,
+      "direct_bilirubin": 0.2575,
+      "alkaline_phosphotase": 0.1672,
+      "alamine_aminotransferase": 0.792,
+      "aspartate_aminotransferase": 1.0,
+      "total_protiens": -0.0256,
+      "albumin": -0.0853,
+      "albumin_and_globulin_ratio": -0.07,
+      "target": 0.1519
+    },
+    "total_protiens": {
+      "age": -0.1875,
+      "total_bilirubin": -0.0081,
+      "direct_bilirubin": -0.0001,
+      "alkaline_phosphotase": -0.0285,
+      "alamine_aminotransferase": -0.0425,
+      "aspartate_aminotransferase": -0.0256,
+      "total_protiens": 1.0,
+      "albumin": 0.7841,
+      "albumin_and_globulin_ratio": 0.2349,
+      "target": -0.035
+    },
+    "albumin": {
+      "age": -0.2659,
+      "total_bilirubin": -0.2223,
+      "direct_bilirubin": -0.2285,
+      "alkaline_phosphotase": -0.1655,
+      "alamine_aminotransferase": -0.0297,
+      "aspartate_aminotransferase": -0.0853,
+      "total_protiens": 0.7841,
+      "albumin": 1.0,
+      "albumin_and_globulin_ratio": 0.6896,
+      "target": -0.1614
+    },
+    "albumin_and_globulin_ratio": {
+      "age": -0.2164,
+      "total_bilirubin": -0.2063,
+      "direct_bilirubin": -0.2001,
+      "alkaline_phosphotase": -0.2342,
+      "alamine_aminotransferase": -0.0024,
+      "aspartate_aminotransferase": -0.07,
+      "total_protiens": 0.2349,
+      "albumin": 0.6896,
+      "albumin_and_globulin_ratio": 1.0,
+      "target": -0.1631
+    },
+    "target": {
+      "age": 0.1374,
+      "total_bilirubin": 0.2202,
+      "direct_bilirubin": 0.246,
+      "alkaline_phosphotase": 0.1849,
+      "alamine_aminotransferase": 0.1634,
+      "aspartate_aminotransferase": 0.1519,
+      "total_protiens": -0.035,
+      "albumin": -0.1614,
+      "albumin_and_globulin_ratio": -0.1631,
+      "target": 1.0
+    }
+  },
+  "key_findings": [
+    "Strong correlation between direct_bilirubin and total_bilirubin (r = 0.87), indicating biliary excretion impairment.",
+    "Moderate-high correlation between alamine_aminotransferase (ALT) and aspartate_aminotransferase (AST) (r = 0.79), typical of hepatocellular necrosis.",
+    "Alkaline phosphatase (ALP) shows significant right-skewness (skew > 3.0), benefiting from robust scaling or tree-based ensemble models.",
+    "Albumin and total proteins show positive correlation (r = 0.78), reflecting liver synthetic capacity."
+  ]
+}
